@@ -1,7 +1,7 @@
 var url = 'http://localhost:8080/subscribe';
 
 //Vapid public key.
-var applicationServerPublicKey = 'BPeXvOlLmOPXjYKOz03cFnQNnj25PHS9YVZn9vwJGCT1YRYNn2FJBjpDPvhPooTHdBezqIS_-bAEBQn6vn2nep8';
+var applicationServerPublicKey = 'BA1aL9i3qIUjA_a3nHlTfkmJcUEPEfUgaiC6ijmjQbOvFrS8Swqo0aiw5fbwy_VQQEnch0hZArcQvoX4gghN5AY';
 
 var serviceWorkerName = 'sw.js';
 
@@ -17,7 +17,7 @@ $(document).ready(function () {
             subscribe();
         }
     });
-    
+
     Notification.requestPermission().then(function (status) {
         if (status === 'denied') {
             console.log('[Notification.requestPermission] The user has blocked notifications.');
@@ -26,7 +26,7 @@ $(document).ready(function () {
             console.log('[Notification.requestPermission] Initializing service worker.');
             initialiseServiceWorker();
         }
-    });
+    })
 });
 
 function initialiseServiceWorker() {

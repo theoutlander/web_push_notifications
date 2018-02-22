@@ -11,7 +11,12 @@ self.addEventListener('push', function(event) {
 
     var data = {};
     if (event.data) {
-        data = event.data.json();
+        data = event.data.text();
+        if(typeof(data) === 'string') {
+            data = JSON.parse(data)
+        }
+
+        console.log(data)
     }
     var title = data.title;
     var message = data.message;
